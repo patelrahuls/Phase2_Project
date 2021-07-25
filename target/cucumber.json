@@ -3,11 +3,11 @@
     "line": 2,
     "elements": [
       {
-        "start_timestamp": "2021-07-25T06:31:23.895Z",
+        "start_timestamp": "2021-07-25T07:44:30.973Z",
         "before": [
           {
             "result": {
-              "duration": 887432598,
+              "duration": 1572244784,
               "status": "passed"
             },
             "match": {
@@ -22,7 +22,16 @@
         "after": [
           {
             "result": {
-              "duration": 69230365,
+              "duration": 2106516833,
+              "status": "passed"
+            },
+            "match": {
+              "location": "BaseClass.logout()"
+            }
+          },
+          {
+            "result": {
+              "duration": 70146595,
               "status": "passed"
             },
             "match": {
@@ -35,7 +44,7 @@
         "steps": [
           {
             "result": {
-              "duration": 352130301,
+              "duration": 457369543,
               "status": "passed"
             },
             "line": 7,
@@ -47,7 +56,7 @@
           },
           {
             "result": {
-              "duration": 1292021593,
+              "duration": 1404519028,
               "status": "passed"
             },
             "line": 8,
@@ -69,7 +78,7 @@
           },
           {
             "result": {
-              "duration": 1130284965,
+              "duration": 1215908882,
               "status": "passed"
             },
             "line": 9,
@@ -81,7 +90,7 @@
           },
           {
             "result": {
-              "duration": 23704168,
+              "duration": 26241240,
               "status": "passed"
             },
             "line": 10,
@@ -102,11 +111,11 @@
         ]
       },
       {
-        "start_timestamp": "2021-07-25T06:31:27.679Z",
+        "start_timestamp": "2021-07-25T07:44:37.864Z",
         "before": [
           {
             "result": {
-              "duration": 582649425,
+              "duration": 631079634,
               "status": "passed"
             },
             "match": {
@@ -121,7 +130,7 @@
         "after": [
           {
             "result": {
-              "duration": 67685194,
+              "duration": 68025391,
               "status": "passed"
             },
             "match": {
@@ -134,7 +143,7 @@
         "steps": [
           {
             "result": {
-              "duration": 339919027,
+              "duration": 370893476,
               "status": "passed"
             },
             "line": 18,
@@ -146,7 +155,7 @@
           },
           {
             "result": {
-              "duration": 1243039638,
+              "duration": 1298244863,
               "status": "passed"
             },
             "line": 19,
@@ -168,7 +177,7 @@
           },
           {
             "result": {
-              "duration": 1071889276,
+              "duration": 1076046658,
               "status": "passed"
             },
             "line": 20,
@@ -180,7 +189,7 @@
           },
           {
             "result": {
-              "duration": 1026089460,
+              "duration": 1032138774,
               "status": "passed"
             },
             "line": 21,
@@ -227,42 +236,18 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-07-25T06:31:32.015Z",
-        "before": [
-          {
-            "result": {
-              "duration": 514374787,
-              "status": "passed"
-            },
-            "match": {
-              "location": "BaseClass.setup()"
-            }
-          }
-        ],
-        "line": 15,
-        "name": "Verify that user is able to add the single product to cart",
+        "line": 4,
+        "name": "",
         "description": "",
-        "id": "product-feature-scenarios;verify-that-user-is-able-to-add-the-single-product-to-cart;;2",
-        "after": [
-          {
-            "result": {
-              "duration": 69995816,
-              "status": "passed"
-            },
-            "match": {
-              "location": "BaseClass.tearDown()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario Outline",
+        "type": "background",
+        "keyword": "Background",
         "steps": [
           {
             "result": {
-              "duration": 340108391,
+              "duration": 384590221,
               "status": "passed"
             },
-            "line": 6,
+            "line": 5,
             "name": "User has opened the SwagLabs application",
             "match": {
               "location": "LoginSteps.user_has_opened_the_swaglabs_application()"
@@ -271,10 +256,10 @@
           },
           {
             "result": {
-              "duration": 1268211024,
+              "duration": 1275983417,
               "status": "passed"
             },
-            "line": 7,
+            "line": 6,
             "name": "User enters \"standard_user\" \u0026 \"secret_sauce\"",
             "match": {
               "arguments": [
@@ -293,34 +278,76 @@
           },
           {
             "result": {
-              "duration": 1169124200,
+              "duration": 1171916584,
               "status": "passed"
             },
-            "line": 8,
+            "line": 7,
             "name": "User clicks on Login button",
             "match": {
               "location": "LoginSteps.user_clicks_on_login_button()"
             },
             "keyword": "And "
-          },
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-07-25T07:44:42.346Z",
+        "before": [
           {
             "result": {
-              "duration": 23698610,
+              "duration": 585909431,
               "status": "passed"
             },
-            "line": 9,
-            "name": "User should be landed on the Products Page",
             "match": {
-              "location": "LoginSteps.user_should_be_landed_on_the_home_page()"
+              "location": "BaseClass.setup()"
+            }
+          }
+        ],
+        "line": 17,
+        "name": "Verify that user is able to add the single product to cart",
+        "description": "",
+        "id": "product-feature-scenarios;verify-that-user-is-able-to-add-the-single-product-to-cart;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 2099719044,
+              "status": "passed"
             },
-            "keyword": "Then "
+            "match": {
+              "location": "BaseClass.logout()"
+            }
           },
           {
             "result": {
-              "duration": 1043867700,
+              "duration": 69715021,
               "status": "passed"
             },
-            "line": 10,
+            "match": {
+              "location": "BaseClass.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 26901693,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "User is on the Products Page",
+            "match": {
+              "location": "ProductsSteps.user_should_be_landed_on_the_home_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1044319814,
+              "status": "passed"
+            },
+            "line": 12,
             "name": "User click on Add to cart button on any one \"Sauce Labs Backpack\"",
             "match": {
               "arguments": [
@@ -335,10 +362,10 @@
           },
           {
             "result": {
-              "duration": 23628030,
+              "duration": 22674633,
               "status": "passed"
             },
-            "line": 11,
+            "line": 13,
             "name": "User verifies that \"1\" products are added to cart",
             "match": {
               "arguments": [
@@ -359,11 +386,66 @@
         ]
       },
       {
-        "start_timestamp": "2021-07-25T06:31:36.488Z",
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 350749599,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User has opened the SwagLabs application",
+            "match": {
+              "location": "LoginSteps.user_has_opened_the_swaglabs_application()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1344644204,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User enters \"standard_user\" \u0026 \"secret_sauce\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "standard_user",
+                  "offset": 13
+                },
+                {
+                  "val": "secret_sauce",
+                  "offset": 31
+                }
+              ],
+              "location": "LoginSteps.user_enters_correct_username_something(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1155617542,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "User clicks on Login button",
+            "match": {
+              "location": "LoginSteps.user_clicks_on_login_button()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-07-25T07:44:49.041Z",
         "before": [
           {
             "result": {
-              "duration": 543921541,
+              "duration": 628816341,
               "status": "passed"
             },
             "match": {
@@ -371,14 +453,23 @@
             }
           }
         ],
-        "line": 18,
+        "line": 20,
         "name": "Verify that user is able to add the multiple product to cart",
         "description": "",
         "id": "product-feature-scenarios;verify-that-user-is-able-to-add-the-multiple-product-to-cart",
         "after": [
           {
             "result": {
-              "duration": 69013763,
+              "duration": 2111271601,
+              "status": "passed"
+            },
+            "match": {
+              "location": "BaseClass.logout()"
+            }
+          },
+          {
+            "result": {
+              "duration": 67793599,
               "status": "passed"
             },
             "match": {
@@ -391,78 +482,22 @@
         "steps": [
           {
             "result": {
-              "duration": 361898800,
+              "duration": 23166894,
               "status": "passed"
             },
-            "line": 19,
-            "name": "User has opened the SwagLabs application",
+            "line": 21,
+            "name": "User is on the Products Page",
             "match": {
-              "location": "LoginSteps.user_has_opened_the_swaglabs_application()"
+              "location": "ProductsSteps.user_should_be_landed_on_the_home_page()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1278325219,
+              "duration": 1210692677,
               "status": "passed"
             },
-            "line": 20,
-            "name": "User enters valid credentials",
-            "match": {
-              "location": "ProductsSteps.user_enters_creds(DataTable)"
-            },
-            "rows": [
-              {
-                "cells": [
-                  "Field",
-                  "Value"
-                ]
-              },
-              {
-                "cells": [
-                  "UserName",
-                  "standard_user"
-                ]
-              },
-              {
-                "cells": [
-                  "Password",
-                  "secret_sauce"
-                ]
-              }
-            ],
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 1143165962,
-              "status": "passed"
-            },
-            "line": 24,
-            "name": "User clicks on Login button",
-            "match": {
-              "location": "LoginSteps.user_clicks_on_login_button()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 22973528,
-              "status": "passed"
-            },
-            "line": 25,
-            "name": "User should be landed on the Products Page",
-            "match": {
-              "location": "LoginSteps.user_should_be_landed_on_the_home_page()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 2085406815,
-              "status": "passed"
-            },
-            "line": 26,
+            "line": 22,
             "name": "User add product to cart on Products page",
             "match": {
               "location": "ProductsSteps.user_add_product(DataTable)"
@@ -470,20 +505,22 @@
             "rows": [
               {
                 "cells": [
-                  "Field",
-                  "Value"
-                ]
-              },
-              {
-                "cells": [
-                  "product1",
                   "Sauce Labs Backpack"
                 ]
               },
               {
                 "cells": [
-                  "product2",
                   "Sauce Labs Bike Light"
+                ]
+              },
+              {
+                "cells": [
+                  "Sauce Labs Bolt T-Shirt"
+                ]
+              },
+              {
+                "cells": [
+                  "Sauce Labs Fleece Jacket"
                 ]
               }
             ],
@@ -491,15 +528,15 @@
           },
           {
             "result": {
-              "duration": 23253282,
+              "duration": 22439442,
               "status": "passed"
             },
-            "line": 30,
-            "name": "User verifies that \"2\" products are added to cart",
+            "line": 27,
+            "name": "User verifies that \"4\" products are added to cart",
             "match": {
               "arguments": [
                 {
-                  "val": "2",
+                  "val": "4",
                   "offset": 20
                 }
               ],

@@ -7,21 +7,27 @@ import org.openqa.selenium.WebElement;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 
 public class ProductsSteps {
 	
 	WebDriver driver = BaseClass.driver;
 	
+	@Given("^User is on the Products Page$")
+	public void user_should_be_landed_on_the_home_page() {	
+		
+		WebElement HomePageItemAfterLogin = driver.findElement(By.xpath("//span[@class='title']"));		////span[contains(text(),'Products')]	
+		String actualHeading = HomePageItemAfterLogin.getText();
+		String expHeading = "PRODUCTS";
+		Assert.assertEquals(expHeading, actualHeading);
+	}
+	
 	@Then("^User click on Add to cart button on any one \"([^\"]*)\"$")
 	public void user_clicks_addtoCart(String product) throws InterruptedException {
 		
-		String xpath = "add-to-cart-"+ product.replace(" ", "-").toLowerCase();
-    	System.out.println(xpath);
-    	
-    	WebElement prCartButton = driver.findElement(By.id(xpath));
-    	prCartButton.click();
+		WebElement Cart1Button = driver.findElement(By.xpath("//*[text()='"+ product +"']//following::button[1]"));
+    	Cart1Button.click();
     	
     	Thread.sleep(1000);
 	}
@@ -35,39 +41,18 @@ public class ProductsSteps {
 		
 		System.out.println("No of Products in Cart verified.");
 	}
-	
-	@When("^User enters valid credentials$")
-	public void user_enters_creds(DataTable table) throws InterruptedException {
-		
-		String username = table.cell(1, 1);
-    	String password = table.cell(2, 1);
-    	
-    	WebElement userName = driver.findElement(By.id("user-name"));
-		userName.sendKeys(username);
-		
-		WebElement pwd = driver.findElement(By.id("password"));
-		pwd.sendKeys(password);
-		
-		Thread.sleep(1000);
-	}
-	
+
 	@And("^User add product to cart on Products page$")
 	public void user_add_product(DataTable table) throws InterruptedException {
-		String product1 = table.cell(1, 1);
-    	String product2 = table.cell(2, 1);
-    	
-    	String xpath1 = "add-to-cart-"+ product1.replace(" ", "-").toLowerCase();
-    	//System.out.println(xpath1);
-    	WebElement pr1CartButton = driver.findElement(By.id(xpath1));
-    	pr1CartButton.click();
-    	Thread.sleep(1000);
-    	
-    	String xpath2 = "add-to-cart-"+ product2.replace(" ", "-").toLowerCase();
-    	//System.out.println(xpath2);
-    	WebElement pr2CartButton = driver.findElement(By.id(xpath2));
-    	pr2CartButton.click();
-    	Thread.sleep(1000);
 		
+		int totalNumbers = table.height();
+		
+		for(int i=0;i<totalNumbers;i++) {
+			System.out.println(table.cell(i, 0));
+	    	WebElement CartButton = driver.findElement(By.xpath("//*[text()='"+ table.cell(i, 0) +"']//following::button[1]"));
+	    	CartButton.click();
+		}
+    	Thread.sleep(1000);
 	}
 	
 }

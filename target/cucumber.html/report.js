@@ -113,6 +113,9 @@ formatter.result({
 formatter.after({
   "status": "passed"
 });
+formatter.after({
+  "status": "passed"
+});
 formatter.scenarioOutline({
   "name": "Verify Login Functionality with incorrect username and password",
   "description": "",
@@ -236,20 +239,8 @@ formatter.scenarioOutline({
   ]
 });
 formatter.step({
-  "name": "User has opened the SwagLabs application",
+  "name": "User is on the Products Page",
   "keyword": "Given "
-});
-formatter.step({
-  "name": "User enters \"\u003cUserName\u003e\" \u0026 \"\u003cPassword\u003e\"",
-  "keyword": "When "
-});
-formatter.step({
-  "name": "User clicks on Login button",
-  "keyword": "And "
-});
-formatter.step({
-  "name": "User should be landed on the Products Page",
-  "keyword": "Then "
 });
 formatter.step({
   "name": "User click on Add to cart button on any one \"\u003cproduct\u003e\"",
@@ -266,29 +257,20 @@ formatter.examples({
   "rows": [
     {
       "cells": [
-        "UserName",
-        "Password",
         "product"
       ]
     },
     {
       "cells": [
-        "standard_user",
-        "secret_sauce",
         "Sauce Labs Backpack"
       ]
     }
   ]
 });
-formatter.scenario({
-  "name": "Verify that user is able to add the single product to cart",
+formatter.background({
+  "name": "",
   "description": "",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "name": "@SingleProductAdd"
-    }
-  ]
+  "keyword": "Background"
 });
 formatter.before({
   "status": "passed"
@@ -323,12 +305,22 @@ formatter.match({
 formatter.result({
   "status": "passed"
 });
+formatter.scenario({
+  "name": "Verify that user is able to add the single product to cart",
+  "description": "",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "name": "@SingleProductAdd"
+    }
+  ]
+});
 formatter.step({
-  "name": "User should be landed on the Products Page",
-  "keyword": "Then "
+  "name": "User is on the Products Page",
+  "keyword": "Given "
 });
 formatter.match({
-  "location": "LoginSteps.user_should_be_landed_on_the_home_page()"
+  "location": "ProductsSteps.user_should_be_landed_on_the_home_page()"
 });
 formatter.result({
   "status": "passed"
@@ -356,15 +348,13 @@ formatter.result({
 formatter.after({
   "status": "passed"
 });
-formatter.scenario({
-  "name": "Verify that user is able to add the multiple product to cart",
+formatter.after({
+  "status": "passed"
+});
+formatter.background({
+  "name": "",
   "description": "",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "name": "@MultipleProductAdd"
-    }
-  ]
+  "keyword": "Background"
 });
 formatter.before({
   "status": "passed"
@@ -380,31 +370,11 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User enters valid credentials",
-  "rows": [
-    {
-      "cells": [
-        "Field",
-        "Value"
-      ]
-    },
-    {
-      "cells": [
-        "UserName",
-        "standard_user"
-      ]
-    },
-    {
-      "cells": [
-        "Password",
-        "secret_sauce"
-      ]
-    }
-  ],
+  "name": "User enters \"standard_user\" \u0026 \"secret_sauce\"",
   "keyword": "When "
 });
 formatter.match({
-  "location": "ProductsSteps.user_enters_creds(DataTable)"
+  "location": "LoginSteps.user_enters_correct_username_something(String,String)"
 });
 formatter.result({
   "status": "passed"
@@ -419,12 +389,22 @@ formatter.match({
 formatter.result({
   "status": "passed"
 });
+formatter.scenario({
+  "name": "Verify that user is able to add the multiple product to cart",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@MultipleProductAdd"
+    }
+  ]
+});
 formatter.step({
-  "name": "User should be landed on the Products Page",
-  "keyword": "Then "
+  "name": "User is on the Products Page",
+  "keyword": "Given "
 });
 formatter.match({
-  "location": "LoginSteps.user_should_be_landed_on_the_home_page()"
+  "location": "ProductsSteps.user_should_be_landed_on_the_home_page()"
 });
 formatter.result({
   "status": "passed"
@@ -434,20 +414,22 @@ formatter.step({
   "rows": [
     {
       "cells": [
-        "Field",
-        "Value"
-      ]
-    },
-    {
-      "cells": [
-        "product1",
         "Sauce Labs Backpack"
       ]
     },
     {
       "cells": [
-        "product2",
         "Sauce Labs Bike Light"
+      ]
+    },
+    {
+      "cells": [
+        "Sauce Labs Bolt T-Shirt"
+      ]
+    },
+    {
+      "cells": [
+        "Sauce Labs Fleece Jacket"
       ]
     }
   ],
@@ -460,13 +442,16 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User verifies that \"2\" products are added to cart",
+  "name": "User verifies that \"4\" products are added to cart",
   "keyword": "Then "
 });
 formatter.match({
   "location": "ProductsSteps.user_verifies_cart(String)"
 });
 formatter.result({
+  "status": "passed"
+});
+formatter.after({
   "status": "passed"
 });
 formatter.after({
