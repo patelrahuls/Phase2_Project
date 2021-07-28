@@ -55,4 +55,16 @@ public class ProductsSteps {
     	Thread.sleep(1000);
 	}
 	
+	@And("^User logout of the Application$")
+	public void userLogoutApplication() throws InterruptedException {
+		WebElement hamburgerMenu = driver.findElement(By.id("react-burger-menu-btn"));
+		hamburgerMenu.click();
+		Thread.sleep(1000);
+		
+		WebElement logoutLink = driver.findElement(By.xpath("//a[text()='Logout']"));
+		logoutLink.click();
+		Thread.sleep(1000);
+	}
+	
+	
 }

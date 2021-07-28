@@ -113,9 +113,6 @@ formatter.result({
 formatter.after({
   "status": "passed"
 });
-formatter.after({
-  "status": "passed"
-});
 formatter.scenarioOutline({
   "name": "Verify Login Functionality with incorrect username and password",
   "description": "",
@@ -250,6 +247,10 @@ formatter.step({
   "name": "User verifies that \"1\" products are added to cart",
   "keyword": "Then "
 });
+formatter.step({
+  "name": "User logout of the Application",
+  "keyword": "And "
+});
 formatter.examples({
   "name": "",
   "description": "",
@@ -345,7 +346,14 @@ formatter.match({
 formatter.result({
   "status": "passed"
 });
-formatter.after({
+formatter.step({
+  "name": "User logout of the Application",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "ProductsSteps.userLogoutApplication()"
+});
+formatter.result({
   "status": "passed"
 });
 formatter.after({
@@ -451,7 +459,14 @@ formatter.match({
 formatter.result({
   "status": "passed"
 });
-formatter.after({
+formatter.step({
+  "name": "User logout of the Application",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "ProductsSteps.userLogoutApplication()"
+});
+formatter.result({
   "status": "passed"
 });
 formatter.after({

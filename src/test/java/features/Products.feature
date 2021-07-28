@@ -11,6 +11,7 @@ Feature: Product Feature Scenarios
     Given User is on the Products Page
     And User click on Add to cart button on any one "<product>"
     Then User verifies that "1" products are added to cart
+    And User logout of the Application
     
     Examples: 
       |product							|
@@ -25,4 +26,5 @@ Feature: Product Feature Scenarios
       |Sauce Labs Bolt T-Shirt   |
       |Sauce Labs Fleece Jacket	|
     Then User verifies that "4" products are added to cart
+    And User logout of the Application
    

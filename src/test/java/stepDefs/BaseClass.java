@@ -18,16 +18,6 @@ public class BaseClass {
 		driver = new ChromeDriver();	
 	}
 	
-	@After("@MultipleProductAdd, @SingleProductAdd, @PositiveLogin")
-	public void logout() throws InterruptedException {
-		WebElement hamburgerMenu = driver.findElement(By.id("react-burger-menu-btn"));
-		hamburgerMenu.click();
-		Thread.sleep(1000);
-		
-		WebElement logoutLink = driver.findElement(By.xpath("//a[text()='Logout']"));
-		logoutLink.click();
-		Thread.sleep(1000);
-	}
 	
 	@After
 	public void tearDown() {	
